@@ -7,9 +7,10 @@
 
 body {
   line-height: 1.6;
+  background-color: #fff;
 }
 
-/* Header Top */
+/* Header */
 .header {
   display: flex;
   justify-content: space-between;
@@ -28,11 +29,17 @@ body {
   gap: 10px;
 }
 
+.header .contact img,
+.header .social img {
+  height: 18px;
+  width: auto;
+}
+
 .header .contact a,
 .header .social a {
   text-decoration: none;
   color: #000;
-  margin-left: 5px;
+  margin-right: 10px;
 }
 
 .header .social span {
@@ -57,8 +64,8 @@ body {
 
 .nav-links {
   display: flex;
-  flex: 1;
   justify-content: center;
+  flex: 1;
   flex-wrap: wrap;
 }
 
@@ -81,6 +88,7 @@ body {
 .add-property-container img {
   margin-right: 5px;
   height: 30px;
+  width: auto;
 }
 
 .add-property {
@@ -176,5 +184,11 @@ body {
 
   .add-property {
     font-size: 14px;
+  }
+
+  .header .contact,
+  .header .social {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
