@@ -5,121 +5,124 @@
   font-family: "Arial", sans-serif;
 }
 
+body {
+  line-height: 1.6;
+}
+
+/* Header Top */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding: 10px 20px;
   background-color: #f8f8f8;
   border-bottom: 1px solid #ddd;
 }
 
-.header .contact {
-  display: flex;
-  align-items: center;
-  font-weight: 100;
-}
-
-.header .contact a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #000;
-}
-
+.header .contact,
 .header .social {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
+.header .contact a,
 .header .social a {
-  margin: 0 5px;
+  text-decoration: none;
   color: #000;
+  margin-left: 5px;
 }
 
+.header .social span {
+  margin-right: 5px;
+}
+
+/* Navigation */
 .nav {
-  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.nav .logo {
-  margin-right: 20px;
-  color: #f40;
-  font-weight: bold;
+.logo {
   height: 40px;
   width: auto;
-  vertical-align: middle;
 }
 
-.nav .nav-links {
+.nav-links {
   display: flex;
+  flex: 1;
   justify-content: center;
-  flex-grow: 1; /* Allows the links to take up available space and center properly */
+  flex-wrap: wrap;
 }
 
-.nav .nav-links a {
+.nav-links a {
   margin: 0 15px;
   text-decoration: none;
-color: black
+  color: black;
 }
 
-.nav .nav-links a .nav-link-1 {
-    color:pink
+.nav-links a:first-of-type {
+  color: pink;
 }
 
-.nav .add-property-container {
+.add-property-container {
   display: flex;
   align-items: center;
-  border-radius: 5px;
-  border-color: #f40;
-}
-.nav .add-property-container img {
-    margin-right: 5px;
-    height: 30px; /* Enlarged icon size */
-    width: auto;
+  margin-top: 10px;
 }
 
-.nav .add-property {
+.add-property-container img {
+  margin-right: 5px;
+  height: 30px;
+}
+
+.add-property {
   color: pink;
   padding: 5px 10px;
   border-radius: 5px;
   text-decoration: none;
-  border: 2px solid pink; 
+  border: 2px solid pink;
 }
 
+/* Main Content */
 .content {
   padding: 50px 20px;
   text-align: center;
-  justify-content: space-around;
 }
 
 .content h1 {
   font-size: 2.5em;
-  margin-bottom: 20px; /* Increased margin for spacing */
+  margin-bottom: 20px;
 }
 
 .content p {
   font-size: 1.1em;
   color: #666;
-  margin-bottom: 30px; /* Increased margin for spacing */
+  margin-bottom: 30px;
 }
 
 .search-bar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  
+  gap: 10px;
 }
 
 .search-bar select,
 .search-bar input {
   padding: 10px;
-  margin: 0 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  width: 250px;
+  max-width: 100%;
 }
 
 .search-bar button {
@@ -131,13 +134,47 @@ color: black
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 5px; 
+  gap: 5px;
 }
 
-.search-bar button .search-icon {
-  height: 20px; 
+.search-bar .search-icon {
+  height: 20px;
   width: auto;
 }
-.nav .nav-links a:first-of-type {
-  color: pink; 
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header,
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+  }
+
+  .add-property-container {
+    justify-content: flex-start;
+  }
+
+  .search-bar {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 1.8em;
+  }
+
+  .search-bar input,
+  .search-bar select {
+    width: 100%;
+  }
+
+  .add-property {
+    font-size: 14px;
+  }
 }
